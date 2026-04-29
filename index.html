@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tenzin Lhungrig | Molecular Bio & Biotech Portfolio</title>
+    <meta charset="UTF-8">
+    <style>
+
+      /* UNIVERSAL RESET */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #f0f4f8 0%, #e8ecf1 100%);
+        overflow-x: hidden;
+      }
+
+      /* PAGE LOAD FADE-IN ANIMATION */
+      body {
+        animation: pageLoad 0.8s ease-out;
+      }
+
+      @keyframes pageLoad {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* SCROLL PROGRESS BAR */
+      .progress-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.3);
+        z-index: 1000;
+      }
+
+      .progress-bar {
+        height: 100%;
+        background: linear-gradient(90deg, #1a5aba, #ffd966);
+        width: 0%;
+        transition: width 0.1s ease;
+      }
+
+      /* FROSTED GLASS NAVIGATION BAR */
+      nav {
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+        margin: 0px;
+        padding: 1rem;
+        background: rgba(26, 90, 186, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        position: sticky;
+        top: 4px;
+        z-index: 100;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      nav a {
+        font-size: 1.2rem;
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        padding: 0.5rem 0;
+        position: relative;
+      }
+
+      /* GLOW EFFECT ON NAV LINKS */
+      nav a:hover {
+        color: #ffd966;
+        transform: translateY(-2px);
+        text-shadow: 0 0 8px rgba(255, 217, 102, 0.5);
+      }
+
+      /* SECTION HEADINGS */
+      section h1 {
+        font-size: 2rem;
+        color: #1a5aba;
+        margin-bottom: 1.5rem;
+        border-left: 5px solid #1a5aba;
+        padding-left: 1rem;
+      }
+
+      /* SECTION TRANSITIONS - REVEAL ON SCROLL */
+      section {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+
+      section.revealed {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ABOUT SECTION */
+      #about {
+        background: linear-gradient(135deg, #e8ecf1 0%, #d4e0f0 100%);
+        padding: 3rem 2rem;
+        margin-bottom: 0;
+      }
+
+      .about-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .intro {
+        font-size: 1.6rem;
+        font-weight: 600;
+        background: linear-gradient(135deg, #1a2a4f 0%, #1a5aba 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1.3;
+        margin-bottom: 1.5rem;
+      }
+
+      #about p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #2c3e66;
+        margin-bottom: 1rem;
+      }
+
+      /* ACADEMIC HIGHLIGHTS */
+      .academic-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        border-top: 2px solid #1a5aba30;
+      }
+
+      .stat {
+        background: white;
+        padding: 1rem 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        cursor: default;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* GLOW EFFECT ON STAT HOVER */
+      .stat::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(26, 90, 186, 0.1), transparent);
+        transition: left 0.5s ease;
+      }
+
+      .stat:hover::before {
+        left: 100%;
+      }
+
+      .stat:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 28px rgba(26, 90, 186, 0.2);
+      }
+
+      .stat-value {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #1a5aba;
+      }
+
+      .stat-label {
+        font-size: 0.8rem;
+        color: #666;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      /* SKILLS SECTION */
+      #skills {
+        padding: 3rem 2rem;
+        background: white;
+      }
+
+      .skills-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+        margin-top: 1.5rem;
+      }
+
+      .skill-card {
+        background: #f8faff;
+        border-radius: 20px;
+        padding: 1.5rem;
+        flex: 1;
+        min-width: 260px;
+        max-width: 320px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        border: 1px solid #e0e8f0;
+        cursor: default;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* ENHANCED SHADOW ON SKILL CARD HOVER */
+      .skill-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(26, 90, 186, 0.15), 0 4px 12px rgba(0, 0, 0, 0.08);
+        border-color: #1a5aba40;
+      }
+
+      /* GLOW BORDER EFFECT */
+      .skill-card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 20px;
+        padding: 2px;
+        background: linear-gradient(135deg, #1a5aba, transparent, #ffd966);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+      }
+
+      .skill-card:hover::after {
+        opacity: 1;
+      }
+
+      .skill-icon {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        transition: transform 0.3s ease;
+      }
+
+      .skill-card:hover .skill-icon {
+        transform: scale(1.15);
+      }
+
+      .skill-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        color: #1a5aba;
+      }
+
+      .skill-card ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 0;
+      }
+
+      .skill-card li {
+        padding: 8px 0;
+        border-bottom: 1px solid #e0e8f0;
+        font-size: 0.9rem;
+        color: #2c3e66;
+        transition: all 0.2s ease;
+      }
+
+      .skill-card li:hover {
+        padding-left: 8px;
+        color: #1a5aba;
+      }
+
+      .skill-card li:last-child {
+        border-bottom: none;
+      }
+
+      /* EXPERIENCE SECTION */
+      #experience {
+        padding: 3rem 2rem;
+        background: #f0f4f8;
+      }
+
+      .experience-card {
+        background: white;
+        border-radius: 16px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        border-left: 4px solid #1a5aba;
+        transition: all 0.3s ease;
+        cursor: default;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* ENHANCED SHADOW ON EXPERIENCE CARD */
+      .experience-card:hover {
+        transform: translateX(8px);
+        box-shadow: 0 8px 24px rgba(26, 90, 186, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06);
+      }
+
+      .experience-card h2 {
+        color: #1a5aba;
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .company {
+        color: #666;
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+        font-style: italic;
+      }
+
+      .experience-card ul {
+        padding-left: 1.5rem;
+      }
+
+      .experience-card li {
+        margin-bottom: 0.5rem;
+        line-height: 1.5;
+      }
+
+      /* PROJECTS SECTION */
+      #projects {
+        padding: 3rem 2rem;
+        background: white;
+      }
+
+      .projects-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .project-card {
+        background: #f8faff;
+        border-radius: 20px;
+        padding: 1.5rem;
+        flex: 1;
+        min-width: 250px;
+        border: 1px solid #e0e8f0;
+        transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        cursor: default;
+        position: relative;
+      }
+
+      /* ENHANCED SHADOW AND GLOW ON PROJECT CARD */
+      .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 35px rgba(26, 90, 186, 0.12);
+        border-color: #1a5aba60;
+      }
+
+      .project-card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 20px;
+        background: radial-gradient(circle at 30% 20%, rgba(26, 90, 186, 0.05), transparent);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+      }
+
+      .project-card:hover::after {
+        opacity: 1;
+      }
+
+      .project-card h2 {
+        color: #1a5aba;
+        font-size: 1.3rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .project-tech {
+        font-size: 0.8rem;
+        color: #888;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .project-card p {
+        line-height: 1.5;
+        color: #2c3e66;
+      }
+
+      .academic-list {
+        background: #f8faff;
+        border-radius: 16px;
+        padding: 1.5rem;
+        list-style-position: inside;
+      }
+
+      .academic-list li {
+        padding: 8px 0;
+        border-bottom: 1px solid #e0e8f0;
+        margin-left: 0.5rem;
+        transition: all 0.2s ease;
+        cursor: default;
+      }
+
+      .academic-list li:hover {
+        padding-left: 12px;
+        color: #1a5aba;
+      }
+
+      .academic-list li:last-child {
+        border-bottom: none;
+      }
+
+      /* COURSEWORK SECTION */
+      #coursework {
+        padding: 3rem 2rem;
+        background: #f0f4f8;
+      }
+
+      .course-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+      }
+
+      .course-tag {
+        background: white;
+        padding: 0.6rem 1.2rem;
+        border-radius: 40px;
+        font-size: 0.85rem;
+        color: #1a5aba;
+        border: 1px solid #1a5aba30;
+        transition: all 0.3s ease;
+        cursor: default;
+      }
+
+      /* GLOW EFFECT ON COURSE TAGS */
+      .course-tag:hover {
+        background: #1a5aba;
+        color: white;
+        transform: scale(1.08);
+        box-shadow: 0 4px 12px rgba(26, 90, 186, 0.3);
+      }
+
+      /* CONTACT SECTION */
+      #contact h1 {
+        text-align: center;
+        border-left: none;
+        padding-left: 0;
+        margin-bottom: 1rem;
+      }
+
+      #contact {
+        padding: 3rem 2rem;
+        background: white;
+        text-align: center;
+      }
+
+      .contact-links {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .contact-btn {
+        background: #1a5aba;
+        color: white;
+        padding: 0.8rem 1.8rem;
+        border-radius: 40px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* GLOW EFFECT ON BUTTONS */
+      .contact-btn::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: translate(-50%, -50%);
+        transition: width 0.4s ease, height 0.4s ease;
+      }
+
+      .contact-btn:hover::before {
+        width: 200px;
+        height: 200px;
+      }
+
+      .contact-btn:hover {
+        background: #0e3d7a;
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(26, 90, 186, 0.3);
+      }
+
+      /* FOOTER */
+      footer {
+        text-align: center;
+        padding: 2rem;
+        background: #1a2a4f;
+        color: white;
+        font-size: 0.9rem;
+      }
+
+      /* RESPONSIVE DESIGN */
+      @media (max-width: 768px) {
+        nav {
+          gap: 1rem;
+          padding: 0.75rem;
+        }
+        nav a {
+          font-size: 0.9rem;
+        }
+        section h1 {
+          font-size: 1.6rem;
+        }
+        .contact-links {
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+        }
+        .academic-stats {
+          gap: 1rem;
+          justify-content: center;
+        }
+        .progress-container {
+          top: 0;
+        }
+        nav {
+          top: 4px;
+        }
+      }
+
+      /* PULSE ANIMATION for email button */
+      @keyframes subtlePulse {
+        0% { box-shadow: 0 0 0 0 rgba(26, 90, 186, 0.4); }
+        70% { box-shadow: 0 0 0 10px rgba(26, 90, 186, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(26, 90, 186, 0); }
+      }
+
+      .contact-btn:hover {
+        animation: subtlePulse 2s ease-in-out infinite;
+      }
+
+    </style>
+  </head>  
+  <body>
+
+    <!-- SCROLL PROGRESS BAR -->
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#coursework">Courses</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+      <h1>About Me</h1>
+      <div class="about-content">
+        <p class="intro">I'm Tenzin — a 4th year Molecular Biology & Biotechnology student at the University of Toronto Scarborough who believes science and code belong together.</p>
+        
+        <p>My academic journey combines lab research with computational thinking. Whether I'm running PCR in the lab or building tools like 
+          <strong>PathwayMapAI</strong>, I'm driven by one question: <em>how can we use technology to understand life better?</em></p>
+        
+        <div class="academic-stats">
+          <div class="stat">
+            <div class="stat-value">3.42</div>
+            <div class="stat-label">Cumulative GPA</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">2027</div>
+            <div class="stat-label">Expected Graduation</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills">
+      <h1>Skills & Tools</h1>
+      <div class="skills-grid">
+        
+        <div class="skill-card">
+          <div class="skill-icon">🔬</div>
+          <h3>Lab Techniques</h3>
+          <ul>
+            <li>PCR & Gel Electrophoresis</li>
+            <li>SDS-PAGE & Western Blot</li>
+            <li>RFLP & DNA Barcoding</li>
+            <li>Titration & Distillation</li>
+            <li>Spectroscopy & Polarimetry</li>
+            <li>Food pathogen testing</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">🧬</div>
+          <h3>Bioinformatics</h3>
+          <ul>
+            <li>NCBI BLAST & Restriction Mapping</li>
+            <li>Python (Google Colab)</li>
+            <li>Linear & Nonlinear Regression</li>
+            <li>Phylogenetic Analysis</li>
+            <li>Sequence Alignment</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">💻</div>
+          <h3>Software & Tools</h3>
+          <ul>
+            <li>Microsoft 365 Suite</li>
+            <li>TQM Databases & Redzone</li>
+            <li>Canva, Blender</li>
+            <li>DaVinci Resolve</li>
+            <li>VS Code, Git</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience">
+      <h1>Experience</h1>
+      
+      <div class="experience-card">
+        <h2>Microbiology Laboratory Technician (Co-op)</h2>
+        <div class="company">Griffith Foods | Food Product Development</div>
+        <ul>
+          <li>Tested food samples for pathogens (Salmonella, Listeria, E. coli, yeast/mold) using plates, petrifilms, and VIDAS automated system</li>
+          <li>Prepared broths and media including PC agar, PD agar, PALCAM broth, UVM broth, BPW, BP agar, and MRS agar</li>
+          <li>Conducted allergen testing for mustard, egg, and soy using Veratox kits</li>
+          <li>Monitored sanitation protocols using Redzone software across multiple production lines</li>
+          <li>Managed sample databases using Access, Excel, and Total Quality Management systems</li>
+        </ul>
+      </div>
+
+      <div class="experience-card">
+        <h2>Science Teacher Volunteer</h2>
+        <div class="company">Drepung Loseling Monastery INC</div>
+        <ul>
+          <li>Taught 7th/8th grade science following Indian national curriculum (Thermodynamics, Atmospheric Dynamics, Biodiversity)</li>
+          <li>Created interactive, inquiry-based lesson plans to maximize student engagement</li>
+        </ul>
+      </div>
+
+      <div class="experience-card">
+        <h2>Tutor</h2>
+        <div class="company">Tutor Doctor</div>
+        <ul>
+          <li>Delivered 1-on-1 in-person tutoring in University Chemistry, Advanced Functions, English, and Mathematics</li>
+          <li>Developed customized lesson plans tailored to individual learning styles</li>
+          <li>Provided structured feedback to students and parents on academic progress</li>
+        </ul>
+      </div>
+
+      <div class="experience-card">
+        <h2>Graphic Designer</h2>
+        <div class="company">Rare Diseases Foundation (UTSC Club)</div>
+        <ul>
+          <li>Created infographics on rare diseases using Canva, covering symptoms, incidence rates, and treatments</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects">
+      <h1>Projects</h1>
+      
+      <div class="projects-grid">
+        <div class="project-card">
+          <h2>LifeMaxxing</h2>
+          <div class="project-tech">React · Zustand · Framer Motion</div>
+          <p>Life management platform with 5 pillars: Health, Wealth, Status, Mind, Looks. Features Phenotype Analyzer, Nutrition Tool, and client-side search index across 20+ pages of documentation.</p>
+        </div>
+
+        <div class="project-card">
+          <h2>PathwayMapAI</h2>
+          <div class="project-tech">AI · Python · Gene Research</div>
+          <p>AI-powered gene research assistant that retrieves research overviews, disease associations, pathway analysis, and mutation significance. Includes PDF export and search history tracking.</p>
+        </div>
+
+        <div class="project-card">
+          <h2>ARC Protein Documentary</h2>
+          <div class="project-tech">Blender · DaVinci Resolve · Clipchamp</div>
+          <p>Developed biologically accurate 3D models of ARC protein and viral capsids in Blender, demonstrating structural homology between neuronal proteins and ancient viruses.</p>
+        </div>
+      </div>
+
+      <h2 style="color:#1a5aba; margin-bottom:1rem;">Academic Projects</h2>
+      <ul class="academic-list">
+        <li><strong>BIOB90 Poster:</strong> Ebola reservoirs in fruit bats vs. insectivorous species</li>
+        <li><strong>BIOC15 Genetics:</strong> RFLP analysis of Drosophila & Sickle Cell Anemia presentation</li>
+        <li><strong>BIOB12 Lab:</strong> Lac operon gene regulation & DNA sequence analysis</li>
+        <li><strong>BIOC90 Documentary:</strong> 3D modeling of ARC protein</li>
+      </ul>
+    </section>
+
+    <!-- COURSEWORK SECTION -->
+    <section id="coursework">
+      <h1>Relevant Coursework</h1>
+      <div class="course-grid">
+        <span class="course-tag">BIOB11 - Molecular Biology (A-)</span>
+        <span class="course-tag">BIOB34 - Animal Physiology (B+)</span>
+        <span class="course-tag">BIOB50 - Ecology (A-)</span>
+        <span class="course-tag">BIOB51 - Evolutionary Biology (A-)</span>
+        <span class="course-tag">BIOC12 - Biochemistry I (B-)</span>
+        <span class="course-tag">BIOC15 - Genetics (B)</span>
+        <span class="course-tag">BIOC17 - Microbiology (B+)</span>
+        <span class="course-tag">BIOC20 - Virology (A-)</span>
+        <span class="course-tag">BIOC39 - Immunology (A-)</span>
+        <span class="course-tag">CHMA10/A11 - Chemistry I/II (B+/A-)</span>
+        <span class="course-tag">CHMB41/42 - Organic Chemistry I (B+)</span>
+        <span class="course-tag">MATA29/A35 - Calculus I/II (A-/A-)</span>
+        <span class="course-tag">STAB22 - Statistics I (B+)</span>
+        <span class="course-tag">CSCA20 - Intro to Programming (A+)</span>
+        <span class="course-tag">ANTA01 - Anthropology (A+)</span>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+      <h1>Contact Me</h1>
+      <div class="contact-links">
+        <a href="mailto:tenzinlhungrig@gmail.com" class="contact-btn">📧 Email</a>
+        <a href="https://www.linkedin.com/in/tenzinlhungrig/" class="contact-btn" target="_blank">🔗 LinkedIn</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 Tenzin Lhungrig | University of Toronto Scarborough | Molecular Biology & Biotechnology</p>
+    </footer>
+
+    <!-- SCROLL PROGRESS BAR JAVASCRIPT -->
+    <script>
+      // Scroll progress bar
+      window.addEventListener('scroll', function() {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById('progressBar').style.width = scrolled + '%';
+      });
+
+      // SECTION TRANSITIONS - Intersection Observer
+      const sections = document.querySelectorAll('section');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+          }else {
+            entry.target.classList.remove('revealed');  // Remove class when leaving
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+      
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    </script>
+  </body>
+</html>
