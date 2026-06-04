@@ -437,6 +437,45 @@
         border-bottom: none;
       }
 
+      /* LAB TECHNIQUES SECTION */
+      #lab-techniques {
+        padding: 3rem 2rem;
+        background: #f0f4f8;
+      }
+
+      .lab-category {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #1a5aba;
+        margin: 1.5rem 0 0.6rem;
+        padding-left: 0.3rem;
+      }
+
+      .lab-category:first-of-type {
+        margin-top: 0.5rem;
+      }
+
+      .lab-tag {
+        display: inline-block;
+        background: white;
+        padding: 0.4rem 1rem;
+        margin: 0.25rem;
+        border-radius: 40px;
+        font-size: 0.8rem;
+        color: #2c3e66;
+        border: 1px solid #3aa87640;
+        transition: all 0.25s ease;
+        cursor: default;
+      }
+
+      .lab-tag:hover {
+        background: #3aa876;
+        color: white;
+        transform: scale(1.06);
+        box-shadow: 0 4px 12px rgba(58, 168, 118, 0.3);
+        border-color: #3aa876;
+      }
+
       /* COURSEWORK SECTION */
       #coursework {
         padding: 3rem 2rem;
@@ -467,6 +506,52 @@
         color: white;
         transform: scale(1.08);
         box-shadow: 0 4px 12px rgba(26, 90, 186, 0.3);
+      }
+
+      /* CERTIFICATES SECTION */
+      #certificates {
+        padding: 3rem 2rem;
+        background: white;
+      }
+
+      #certificates h1 {
+        text-align: center;
+        border-left: none;
+        padding-left: 0;
+      }
+
+      .cert-card {
+        background: #f8faff;
+        border-radius: 16px;
+        padding: 1.5rem;
+        margin: 1.5rem auto;
+        max-width: 700px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        border-left: 4px solid #1a5aba;
+        transition: all 0.3s ease;
+      }
+
+      .cert-card:hover {
+        transform: translateX(8px);
+        box-shadow: 0 8px 24px rgba(26, 90, 186, 0.12);
+      }
+
+      .cert-card h3 {
+        color: #1a5aba;
+        font-size: 1.1rem;
+        margin-bottom: 0.3rem;
+      }
+
+      .cert-card .cert-org {
+        color: #666;
+        font-size: 0.85rem;
+        font-style: italic;
+      }
+
+      .cert-card .cert-date {
+        color: #888;
+        font-size: 0.8rem;
+        margin-top: 0.5rem;
       }
 
       /* CONTACT SECTION */
@@ -595,7 +680,9 @@
       <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
+      <a href="#lab-techniques">Techniques</a>
       <a href="#coursework">Courses</a>
+      <a href="#certificates">Certificates</a>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -605,14 +692,12 @@
       <div class="about-content">
         <p class="intro">I'm Tenzin — a 4th year Molecular Biology & Biotechnology student at the University of Toronto Scarborough who believes science and code belong together.</p>
         
-        <p>My academic journey combines lab research with computational thinking. Whether I'm running PCR in the lab or building tools like 
-          <strong>PathwayMapAI</strong>, I'm driven by one question: <em>how can we use technology to understand life better?</em></p>
+        <p>My academic journey combines lab research with computational thinking. Whether I'm running PCR in the lab or building tools like the 
+          <strong>Host-Pathogen Trafficking Hub</strong>, I'm driven by one question: <em>how can we use technology to understand life better?</em></p>
+        
+        <p>Languages: English (Fluent) &bull; Tibetan (Native) &bull; Hindi (Elementary) &bull; French (Elementary)</p>
         
         <div class="academic-stats">
-          <div class="stat">
-            <div class="stat-value">3.42</div>
-            <div class="stat-label">Cumulative GPA</div>
-          </div>
           <div class="stat">
             <div class="stat-value">2027</div>
             <div class="stat-label">Expected Graduation</div>
@@ -630,12 +715,11 @@
           <div class="skill-icon">🔬</div>
           <h3>Lab Techniques</h3>
           <ul>
-            <li>PCR & Gel Electrophoresis</li>
-            <li>SDS-PAGE & Western Blot</li>
-            <li>RFLP & DNA Barcoding</li>
-            <li>Titration & Distillation</li>
-            <li>Spectroscopy & Polarimetry</li>
-            <li>Food pathogen testing</li>
+            <li>PCR</li>
+            <li>Gel Electrophoresis</li>
+            <li>Western Blotting</li>
+            <li>Bacterial Transformation</li>
+            <li>qPCR / RT-PCR</li>
           </ul>
         </div>
 
@@ -671,41 +755,38 @@
       <h1>Experience</h1>
       
       <div class="experience-card">
-        <h2>Microbiology Laboratory Technician (Co-op)</h2>
+        <h2>Microbiologist Technician | Jan 2025 - Dec 2025</h2>
         <div class="company">Griffith Foods | Food Product Development</div>
         <ul>
-          <li>Tested food samples for pathogens (Salmonella, Listeria, E. coli, yeast/mold) using plates, petrifilms, and VIDAS automated system</li>
-          <li>Prepared broths and media including PC agar, PD agar, PALCAM broth, UVM broth, BPW, BP agar, and MRS agar</li>
-          <li>Conducted allergen testing for mustard, egg, and soy using Veratox kits</li>
-          <li>Monitored sanitation protocols using Redzone software across multiple production lines</li>
-          <li>Managed sample databases using Access, Excel, and Total Quality Management systems</li>
+          <li>Conducted pathogen testing (Salmonella, Listeria, E. coli) across diverse food matrices—sauces, seasonings, and raw samples—using Petrifilms, plate methods, and VIDAS automated immunoassay systems, up to 500 samples tested per week.</li>
+          <li>Prepared and maintained selective/differential media: PC agar, PALCAM broth, UVM broth, MRS agar, BPW, BP agar, and PD agar.</li>
+          <li>Performed allergen testing (mustard, egg, soy) using Veratox ELISA kits; monitored allergen washout compliance via Redzone sanitation software across multiple production lines and locations.</li>
+          <li>Managed and queried cross functional sample databases using MS Access, Excel, and TQM systems and organized audit-ready file archives across them.</li>
         </ul>
       </div>
 
       <div class="experience-card">
-        <h2>Science Teacher Volunteer</h2>
+        <h2>Science Teacher | Jul 2024 - Aug 2024</h2>
         <div class="company">Drepung Loseling Monastery INC</div>
         <ul>
-          <li>Taught 7th/8th grade science following Indian national curriculum (Thermodynamics, Atmospheric Dynamics, Biodiversity)</li>
-          <li>Created interactive, inquiry-based lesson plans to maximize student engagement</li>
+          <li>Delivered 7th and 8th-grade science instruction (Indian national curriculum) covering Thermodynamics, Atmospheric Dynamics, and Biodiversity through inquiry-based lesson design to 20+ students.</li>
         </ul>
       </div>
 
       <div class="experience-card">
-        <h2>Tutor</h2>
+        <h2>Tutor | Nov 2024 - Nov 2025</h2>
         <div class="company">Tutor Doctor</div>
         <ul>
-          <li>Delivered 1-on-1 in-person tutoring in University Chemistry, Advanced Functions, English, and Mathematics</li>
-          <li>Developed customized lesson plans tailored to individual learning styles</li>
-          <li>Provided structured feedback to students and parents on academic progress</li>
+          <li>Provided 1-on-1 in person tutoring for 3 students in University Chemistry, Advanced Functions, and foundational mathematics; developed individualized lesson plans aligned to each student's learning profile and objectives.</li>
+          <li>Maintained regular progress communication with students and parents with structured milestone feedback and identifying strategic improvement areas.</li>
         </ul>
       </div>
 
       <div class="experience-card">
-        <h2>Graphic Designer</h2>
+        <h2>Graphic Designer | Sep 2024 - Apr 2025</h2>
         <div class="company">Rare Diseases Foundation (UTSC Club)</div>
         <ul>
-          <li>Created infographics on rare diseases using Canva, covering symptoms, incidence rates, and treatments</li>
+          <li>Designed 8+ educational infographics for Instagram carousel posts using Canva on rare diseases such as Progeria, covering pathophysiology, incidence rates, symptom profiles, and current treatment modalities for public dissemination.</li>
         </ul>
       </div>
     </section>
@@ -716,52 +797,154 @@
       
       <div class="projects-grid">
         <div class="project-card">
-          <h2><a href = "https://lifemaxing-nine.vercel.app/" style="text-decoration: none; color:#1a5aba">LIFEMAX</a></h2>
+          <h2><a href = "https://lifemaxframework.com/" style="text-decoration: none; color:#1a5aba">LIFEMAX</a></h2>
           <div class="project-tech">React · Zustand · Framer Motion</div>
           <p>Life management platform with 5 pillars: Health, Wealth, Status, Mind, Looks. Features Phenotype Analyzer, Nutrition Tool, and client-side search index across 20+ pages of documentation.</p>
         </div>
 
         <div class="project-card">
-          <h2>PathwayMapAI</h2>
-          <div class="project-tech">AI · Python · Gene Research</div>
-          <p>AI-powered gene research assistant that retrieves research overviews, disease associations, pathway analysis, and mutation significance. Includes PDF export and search history tracking.</p>
+          <h2><a href="https://host-pathogen-tracker.vercel.app/" style="text-decoration: none; color:#1a5aba">Host-Pathogen Trafficking Hub</a></h2>
+          <div class="project-tech">TypeScript · HTML/CSS · Interactive UI</div>
+          <p>Educational resource on cellular microbiology covering phagosome dynamics, intracellular pathogen evasion strategies (Salmonella, Listeria, M. tuberculosis, Legionella, Shigella), and microscopy techniques for tracking host–pathogen interactions.</p>
         </div>
 
         <div class="project-card">
-          <h2>ARC Protein Documentary</h2>
+          <h2><a href="https://onedrive.live.com/?qt=allmyphotos&photosData=%2Fshare%2F33182C5DC0EA9258%21sc77a5208dbda4f2a8cf29cefb48c3641%3Fithint%3Dvideo%26e%3D23hqdx%26migratedtospo%3Dtrue&cid=33182C5DC0EA9258&id=33182C5DC0EA9258%21sc77a5208dbda4f2a8cf29cefb48c3641&redeem=aHR0cHM6Ly8xZHJ2Lm1zL3YvYy8zMzE4MmM1ZGMwZWE5MjU4L0lRQUlVbnJIMnRzcVQ0enluTy0wakRaQkFXT1Q5OFA5Y1ZYYkxfT3EtbGVpUFFvP2U9MjNocWR4&v=photos" style="text-decoration: none; color:#1a5aba">ARC Protein Documentary</a></h2>
           <div class="project-tech">Blender · DaVinci Resolve · Clipchamp</div>
           <p>Developed biologically accurate 3D models of ARC protein and viral capsids in Blender, demonstrating structural homology between neuronal proteins and ancient viruses.</p>
         </div>
+
+        <div class="project-card">
+          <h2><a href="1774457620880.jpg" style="text-decoration: none; color:#1a5aba">Bats and Ebola Transmission</a></h2>
+          <div class="project-tech">Research · Scientific Writing · Data Analysis</div>
+          <p>Authored a group scientific poster synthesizing ecology, immunology, and evolutionary biology to propose a novel mechanistic account of fruit bats' superior efficacy as Ebola reservoirs versus insectivorous species, with literature reviews across PubMed, Google Scholar, and Web of Science.</p>
+        </div>
       </div>
 
-      <h2 style="color:#1a5aba; margin-bottom:1rem;">Academic Projects</h2>
-      <ul class="academic-list">
-        <li><strong>BIOB90 Poster:</strong> Ebola reservoirs in fruit bats vs. insectivorous species</li>
-        <li><strong>BIOC15 Genetics:</strong> RFLP analysis of Drosophila & Sickle Cell Anemia presentation</li>
-        <li><strong>BIOB12 Lab:</strong> Lac operon gene regulation & DNA sequence analysis</li>
-        <li><strong>BIOC90 Documentary:</strong> 3D modeling of ARC protein</li>
-      </ul>
+    </section>
+
+    <!-- LAB TECHNIQUES SECTION -->
+    <section id="lab-techniques">
+      <h1>Lab Techniques</h1>
+
+      <div class="lab-category">Molecular Biology</div>
+      <div>
+        <span class="lab-tag">Restriction Digests</span>
+        <span class="lab-tag">DNA Ligation</span>
+        <span class="lab-tag">Bacterial Transformation</span>
+        <span class="lab-tag">Yeast Transformation</span>
+        <span class="lab-tag">TOPO Cloning</span>
+        <span class="lab-tag">Plasmid Isolation (Miniprep)</span>
+        <span class="lab-tag">RT-PCR</span>
+        <span class="lab-tag">qPCR</span>
+        <span class="lab-tag">Sanger Sequencing</span>
+        <span class="lab-tag">Yeast Genomic DNA Isolation</span>
+        <span class="lab-tag">RNA Isolation</span>
+        <span class="lab-tag">Alkaline Lysis</span>
+        <span class="lab-tag">PCR</span>
+        <span class="lab-tag">Gel Electrophoresis</span>
+        <span class="lab-tag">RFLP</span>
+        <span class="lab-tag">DNA Barcoding</span>
+      </div>
+
+      <div class="lab-category">Protein Biochemistry</div>
+      <div>
+        <span class="lab-tag">Affinity Chromatography</span>
+        <span class="lab-tag">Ion Exchange Chromatography</span>
+        <span class="lab-tag">Size-Exclusion Chromatography</span>
+        <span class="lab-tag">Thin Layer Chromatography</span>
+        <span class="lab-tag">Differential Centrifugation</span>
+        <span class="lab-tag">Ammonium Sulfate Precipitation</span>
+        <span class="lab-tag">Dialysis</span>
+        <span class="lab-tag">Bradford Assay</span>
+        <span class="lab-tag">Enzyme Kinetics (M-M)</span>
+        <span class="lab-tag">Isoelectric Focusing</span>
+        <span class="lab-tag">2D Gel Electrophoresis</span>
+        <span class="lab-tag">Mass Spectrometry (ESI-MS/MS)</span>
+        <span class="lab-tag">SDH Assay</span>
+        <span class="lab-tag">Alkaline Phosphatase Assay</span>
+        <span class="lab-tag">SDS-PAGE</span>
+        <span class="lab-tag">Western Blotting</span>
+        <span class="lab-tag">Spectroscopy</span>
+      </div>
+
+      <div class="lab-category">Microbiology</div>
+      <div>
+        <span class="lab-tag">Gram Staining</span>
+        <span class="lab-tag">Endospore Staining</span>
+        <span class="lab-tag">Capsule Staining</span>
+        <span class="lab-tag">Acid-Fast Staining</span>
+        <span class="lab-tag">Streak Plating</span>
+        <span class="lab-tag">Spread-Plate Method</span>
+        <span class="lab-tag">Serial Dilutions &amp; CFU</span>
+        <span class="lab-tag">Bacterial Conjugation</span>
+        <span class="lab-tag">Plaque Assay</span>
+        <span class="lab-tag">Antimicrobial Disk Diffusion</span>
+        <span class="lab-tag">Selective/Differential Media</span>
+        <span class="lab-tag">UV Germicidal Assay</span>
+        <span class="lab-tag">Lysozyme Assay</span>
+        <span class="lab-tag">β-Galactosidase (Miller) Assay</span>
+        <span class="lab-tag">Biofilm Assay</span>
+        <span class="lab-tag">Generation Time Determination</span>
+        <span class="lab-tag">Food Pathogen Testing</span>
+      </div>
+
+      <div class="lab-category">Bioinformatics</div>
+      <div>
+        <span class="lab-tag">BLAST (NCBI)</span>
+        <span class="lab-tag">Phylogenetic Analysis</span>
+        <span class="lab-tag">Restriction Mapping</span>
+        <span class="lab-tag">ORF Analysis</span>
+        <span class="lab-tag">Hydropathy Analysis</span>
+        <span class="lab-tag">Phosphorylation Prediction</span>
+        <span class="lab-tag">Primer Design</span>
+      </div>
+
+      <div class="lab-category">Organic Chemistry</div>
+      <div>
+        <span class="lab-tag">Acid-Base Extraction</span>
+        <span class="lab-tag">Recrystallization</span>
+        <span class="lab-tag">Polarimetry</span>
+        <span class="lab-tag">Molecular Modelling</span>
+        <span class="lab-tag">Distillation</span>
+      </div>
+
+      <div class="lab-category">Analytical Methods</div>
+      <div>
+        <span class="lab-tag">Titration</span>
+      </div>
     </section>
 
     <!-- COURSEWORK SECTION -->
     <section id="coursework">
       <h1>Relevant Coursework</h1>
       <div class="course-grid">
+        <span class="course-tag">BIOB10 - Cell Biology (A+)</span>
         <span class="course-tag">BIOB11 - Molecular Biology (A-)</span>
         <span class="course-tag">BIOB34 - Animal Physiology (B+)</span>
         <span class="course-tag">BIOB50 - Ecology (A-)</span>
         <span class="course-tag">BIOB51 - Evolutionary Biology (A-)</span>
-        <span class="course-tag">BIOC12 - Biochemistry I (B-)</span>
-        <span class="course-tag">BIOC15 - Genetics (B)</span>
+        <span class="course-tag">BIOC14 - Genes, Environment & Behaviour (A-)</span>
         <span class="course-tag">BIOC17 - Microbiology (B+)</span>
         <span class="course-tag">BIOC20 - Virology (A-)</span>
-        <span class="course-tag">BIOC39 - Immunology (A-)</span>
+        <span class="course-tag">BIOC30 - Genetic Codes to Fantastic Creatures (A)</span>
+        <span class="course-tag">BIOC39 - Immunology (A)</span>
         <span class="course-tag">CHMA10/A11 - Chemistry I/II (B+/A-)</span>
         <span class="course-tag">CHMB41/42 - Organic Chemistry I (B+)</span>
         <span class="course-tag">MATA29/A35 - Calculus I/II (A-/A-)</span>
         <span class="course-tag">STAB22 - Statistics I (B+)</span>
         <span class="course-tag">CSCA20 - Intro to Programming (A+)</span>
         <span class="course-tag">ANTA01 - Anthropology (A+)</span>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES SECTION -->
+    <section id="certificates">
+      <h1>Certificates</h1>
+      <div class="cert-card">
+        <h3><a href="https://courses.edx.org/certificates/c556a76effe5473e8075c017eec9193d" style="text-decoration: none; color:#1a5aba">Principles, Statistical and Computational Tools for Reproducible Data Science</a></h3>
+        <div class="cert-org">Harvard University (edX Verified Certificate)</div>
+        <div class="cert-date">May 2026</div>
       </div>
     </section>
 
